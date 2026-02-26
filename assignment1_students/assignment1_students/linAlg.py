@@ -19,8 +19,6 @@ def chol(M):
     # Cholesky decomposition + jitter for numerical stabilisation
     return np.linalg.cholesky(M + jitter(M))
 
-
-
 '''Linear Algebra matrix reshaping functions'''
 def diagdf(df):
     N = int(df.shape[0] / 3)

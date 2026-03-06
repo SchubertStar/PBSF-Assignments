@@ -308,3 +308,19 @@ def makeKalmanFilterPlots(deadReckoning, meanEKFPosition, meanUKFPosition, model
 
     plt.show()
     return
+
+def calculate_trajectory_rmse(estimate, truth):
+    """
+    Computes the Root Mean Square Error (RMSE) for a 3D trajectory.
+    estimate: (3, T) array
+    truth: (3, T) array
+    """
+    # 1. Calculate squared errors per dimension (x, y, z) at each time step
+    squared_diff = (estimate - truth)**2
+    
+    # 2. Sum the squared errors for each time step to get squared Euclidean distance
+    dist_sq = np.sum(squared_diff, axis=0)
+    
+    # 3. Calculate the Mean and then the Square Root for RMSE
+    rmse = np.sqrt(np.mean(dist_sq))
+    return rmse

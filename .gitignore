@@ -1,3 +1,6 @@
-.PSFvenv
-.PSFwindows
-.lectures
+.PSFvenv/
+.PSFwindows/
+lectures/
+JulianoP.txt
+requirements4WSL.txt
+requirementsWindows.txt

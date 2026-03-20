@@ -13,7 +13,8 @@ def sinv(M, M2=0):
 
 def jitter(M):
     # Add jitter for numerical stabilisation
-    return np.eye(len(M)) * 10**-9
+    return np.eye(len(M)) * 10**-6
+# Changed JITTER TO ADD MORE TOLERANCE, AS CHOLESKY DECOMPOSITION WAS FAILING DUE TO NUMERICAL INSTABILITY
 
 def chol(M):
     # Cholesky decomposition + jitter for numerical stabilisation
